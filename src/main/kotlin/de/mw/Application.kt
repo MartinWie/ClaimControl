@@ -1,6 +1,6 @@
-package de.7mw
+package de.mw
 
-import de.7mw.plugins.*
+import de.mw.plugins.* // ktlint-disable no-wildcard-imports
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*

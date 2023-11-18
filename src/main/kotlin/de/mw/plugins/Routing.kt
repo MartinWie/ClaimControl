@@ -1,4 +1,4 @@
-package de.7mw.plugins
+package de.mw.plugins
 
 import io.ktor.server.application.*
 import io.ktor.server.response.*
