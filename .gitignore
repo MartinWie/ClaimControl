@@ -26,3 +26,5 @@ replay_pid*
 # dot folders
 .gradle/*
 .idea/*
+
+build/*
