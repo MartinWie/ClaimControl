@@ -3,6 +3,7 @@ val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 val mockkVersion: String by project
+val openaiClientVersion: String by project
 
 plugins {
     kotlin("jvm") version "1.9.20"
@@ -29,8 +30,9 @@ dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-serialization-kotlinx-json-jvm")
     implementation("io.ktor:ktor-server-netty-jvm")
+    implementation("io.ktor:ktor-client-cio-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
-    implementation("com.aallam.openai:openai-client:3.5.1")
+    implementation("com.aallam.openai:openai-client:$openaiClientVersion")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     testImplementation("io.mockk:mockk:$mockkVersion")
