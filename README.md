@@ -3,6 +3,7 @@
 ## Todos's
 
 - add user auth
-- add jooq + DB 
 - dockerize
+- add jooq + DB 
+- Add proper initial setup for unit and integration tests
 - setup Amazon Textract
