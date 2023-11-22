@@ -19,7 +19,7 @@ class OpenAIService(apiKey: String) {
         )
         openAI = OpenAI(config)
     }
-    suspend fun generateText(prompt: String): String {
+    suspend fun generateText(prompt: String): String? {
         val chatCompletionRequest = ChatCompletionRequest(
             model = ModelId("gpt-4-1106-preview"),
             temperature = 0.3,
@@ -35,7 +35,7 @@ class OpenAIService(apiKey: String) {
             ),
         )
         val completion = openAI.chatCompletion(chatCompletionRequest)
-        return completion.toString()
+        return completion.choices.first().message.content
     }
 
     companion object {
