@@ -1,8 +1,8 @@
 package de.mw.plugins
 
 import de.mw.BASICAUTH_ADMIN_ID
-import io.ktor.server.application.*
-import io.ktor.server.auth.*
+import io.ktor.server.application.* // ktlint-disable no-wildcard-imports
+import io.ktor.server.auth.* // ktlint-disable no-wildcard-imports
 
 fun Application.configureSecurity() {
     val basiAuthAdminUsername = System.getenv("SECRET_CLAIMCONTROL_BASIC_AUTH_USERNAME") ?: throw IllegalStateException("Username not found in environment variables")
