@@ -7,10 +7,12 @@ import com.aallam.openai.api.http.Timeout
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.client.OpenAI
 import com.aallam.openai.client.OpenAIConfig
+import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlin.time.Duration.Companion.seconds
 
 class OpenAIService(apiKey: String) {
     private val openAI: OpenAI
+    private val logger = KotlinLogging.logger {}
 
     init {
         val config = OpenAIConfig(
@@ -20,6 +22,7 @@ class OpenAIService(apiKey: String) {
         openAI = OpenAI(config)
     }
     suspend fun generateText(prompt: String): String? {
+        logger.info { "Triggering OpenAI chat completion with promt: $prompt " }
         val chatCompletionRequest = ChatCompletionRequest(
             model = ModelId("gpt-4-1106-preview"),
             temperature = 0.3,
