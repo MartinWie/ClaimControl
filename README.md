@@ -2,7 +2,6 @@
 
 ## Todos's
 
-- Add logging
 - dockerize
 - add jooq + DB migrations 
 - setup AWS infrastructure
