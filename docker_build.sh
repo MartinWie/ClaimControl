@@ -1,20 +1,10 @@
 #!/bin/bash
 
-# Function to check AWS credentials
-check_aws_credentials() {
-    # Try to use AWS CLI to get caller identity, redirecting errors
-    if aws sts get-caller-identity > /dev/null 2>&1; then
-        echo "AWS credentials are available."
-        return 0
-    else
-        echo "AWS credentials are not available."
-        return 1
-    fi
-}
-
-# Check for AWS credentials
-if ! check_aws_credentials; then
-    # If credentials are not available, set them from custom environment variables
+# Check if ECS_CONTAINER_METADATA_URI is set
+if [ -n "$ECS_CONTAINER_METADATA_URI" ]; then
+    echo "Running on AWS ECS/Fargate"
+else
+    echo "Running locally"
     export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_CUSTOM}
     export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_CUSTOM}
 fi

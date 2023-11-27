@@ -2,7 +2,8 @@
 
 ## Todos's
 
-- dockerize (remaining problem is to get environment variables into the container next try is to install pydo and fetch envs wars form there )
+- dockerize (remaining, fix aenv(timeout issue(fix container mode)))
+- Create test credentials and fix build script 
 - setup AWS infrastructure
 - github actions setup
 - add jooq + DB migrations 
