@@ -2,8 +2,6 @@
 
 ## Todos's
 
-- dockerize (remaining, fix aenv(timeout issue(fix container mode)))
-- Create test credentials and fix build script 
 - setup AWS infrastructure
 - github actions setup
 - add jooq + DB migrations 

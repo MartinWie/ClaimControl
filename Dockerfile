@@ -12,7 +12,7 @@ RUN apk --no-cache add py-pip
 
 # Get environmentvariables & build
 RUN pip install aenv
-RUN aenv -e "$ENVIRONMENT" -s ClaimControl "./gradlew build"
+RUN aenv -c -r eu-west-1 -e "$ENVIRONMENT" -s ClaimControl "./gradlew build"
 
 
 # Stage 2: Create the runtime image using
@@ -31,5 +31,5 @@ RUN pip install aenv
 COPY --from=build /build/build/libs/de.mw.claimcontrol-all.jar /app/app.jar
 
 # Run the application
-CMD aenv -e "$ENVIRONMENT" -s ClaimControl "java -jar /app/app.jar"
+CMD aenv -c -r eu-west-1 -e "$ENVIRONMENT" -s ClaimControl "java -jar /app/app.jar"
 

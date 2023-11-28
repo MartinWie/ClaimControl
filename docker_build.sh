@@ -17,4 +17,4 @@ fi
 
 # Build the Docker image
 echo "Building Docker image..."
-docker build -t claimcontrol .
+docker build --no-cache -t claimcontrol .
