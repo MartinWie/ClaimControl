@@ -15,7 +15,7 @@ fun Application.configureRouting() {
         }
 
         authenticate(BASICAUTH_ADMIN_ID) {
-            get("/test") {
+            get("/auth-test") {
                 val openAIService = call.application.attributes[OpenAIServiceKey]
                 val response = openAIService.generateText("Tell me a joke")
                 response?.also {
