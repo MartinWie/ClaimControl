@@ -1,0 +1,21 @@
+name: GitHub Action to do a clean full build and push the docker image to AWS ECR
+run-name: ${{ github.actor }} is running full build and publishing a new image 🚀
+on: [push]
+
+jobs:
+  Build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Run Docker Build Script
+        run: |
+          chmod +x ./docker_build.sh
+          ./docker_build.sh
+
+      - name: Display Job Status
+        run: echo "🍏 This job's status is ${{ job.status }}."
