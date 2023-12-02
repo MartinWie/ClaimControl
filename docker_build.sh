@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Test output"
+echo "$ECR_AWS_REGION"
+echo "Test output2"
+
 # Check if ECS_CONTAINER_METADATA_URI is set
 if [ -n "$ECS_CONTAINER_METADATA_URI" ]; then
     echo "Running on AWS ECS/Fargate"
