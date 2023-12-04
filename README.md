@@ -2,7 +2,7 @@
 
 ## Todos's
 
-- Fix Github pipeline docker build
+- Setup AWS deployment
 - add jooq + DB migrations 
 - add queueing for initial processing(also failure queue) (do not forget to add userId's for each job)
 - add basic document processing from start to finish
