@@ -21,13 +21,14 @@ COPY . .
 RUN ls -la
 RUN cat gradle/wrapper/gradle-wrapper.properties
 RUN chmod +x ./gradlew
+RUN ls -la gradle/wrapper
 
 # Install pip
 RUN apk --no-cache add py-pip
 
 # Get environmentvariables & build
 RUN pip install aenv
-RUN aenv -c -r eu-west-1 -e "$ENVIRONMENT" -s ClaimControl "./gradlew build"
+RUN aenv -c -r eu-west-1 -e "$ENVIRONMENT" -s ClaimControl "./gradlew build --info"
 
 
 # Stage 2: Create the runtime image using
