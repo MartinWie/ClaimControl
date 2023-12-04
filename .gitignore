@@ -31,3 +31,6 @@ build/*
 
 # Env file
 .env
+
+# Exclude gradle-wrapper.jar from being ignored
+!gradle/wrapper/gradle-wrapper.jar
