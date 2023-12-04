@@ -1,6 +1,18 @@
 # Stage 1: Build using amazoncorretto
 FROM amazoncorretto:21-alpine AS build
 
+# Environment variables
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+ARG ENVIRONMENT
+ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+ENV ENVIRONMENT=$ENVIRONMENT
+
+# Set ENVIRONMENT to "Dev" if not set
+RUN if [ -z "$ENVIRONMENT" ]; then ENVIRONMENT="Dev"; fi
+
+
 # Set the working directory in the build stage
 WORKDIR /build
 

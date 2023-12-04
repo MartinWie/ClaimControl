@@ -1,9 +1,5 @@
 #!/bin/bash
 
-echo "Test start"
-echo "$ENVIRONMENT"
-echo "Test stop"
-
 # Check if ECS_CONTAINER_METADATA_URI is set
 if [ -n "$ECS_CONTAINER_METADATA_URI" ]; then
     echo "Running on AWS ECS/Fargate"
@@ -21,7 +17,7 @@ fi
 
 # Build the Docker image
 echo "Building Docker image..."
-docker build --no-cache -t claimcontrol .
+docker build --no-cache --build-arg ENVIRONMENT="${ENVIRONMENT}" --build-arg AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" --build-arg AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" -t claimcontrol .
 
 # Check for --local argument
 if [ "$1" == "--local" ]; then
