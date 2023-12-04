@@ -19,6 +19,8 @@ WORKDIR /build
 # Copy the project files into the container
 COPY . .
 RUN ls -la
+RUN cat gradle/wrapper/gradle-wrapper.properties
+RUN chmod +x ./gradlew
 
 # Install pip
 RUN apk --no-cache add py-pip
