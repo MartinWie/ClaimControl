@@ -3,7 +3,6 @@
 ## Todos's
 
 - Setup AWS deployment
-  - Resolve AWS ticket(Internal Bug Case ID 14430093191)
   - ECS Cluster creation
   - Create Task Definition
   - Create ECS Service
