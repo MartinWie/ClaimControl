@@ -3,6 +3,11 @@
 ## Todos's
 
 - Setup AWS deployment
+  - Resolve AWS ticket(Internal Bug Case ID 14430093191)
+  - ECS Cluster creation
+  - Create Task Definition
+  - Create ECS Service
+  - Automate Deployment with ECR Image Updates
 - add jooq + DB migrations 
 - add queueing for initial processing(also failure queue) (do not forget to add userId's for each job)
 - add basic document processing from start to finish
