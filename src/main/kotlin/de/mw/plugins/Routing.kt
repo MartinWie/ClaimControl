@@ -1,12 +1,14 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package de.mw.plugins
 
 import de.mw.BASICAUTH_ADMIN_ID
 import de.mw.OpenAIServiceKey
-import io.ktor.http.* // ktlint-disable no-wildcard-imports
-import io.ktor.server.application.* // ktlint-disable no-wildcard-imports
-import io.ktor.server.auth.* // ktlint-disable no-wildcard-imports
-import io.ktor.server.response.* // ktlint-disable no-wildcard-imports
-import io.ktor.server.routing.* // ktlint-disable no-wildcard-imports
+import io.ktor.http.*
+import io.ktor.server.application.*
+import io.ktor.server.auth.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
 
 fun Application.configureRouting() {
     routing {

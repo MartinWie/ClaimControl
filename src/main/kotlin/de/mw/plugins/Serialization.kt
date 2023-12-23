@@ -1,6 +1,8 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package de.mw.plugins
 
-import io.ktor.serialization.kotlinx.json.* // ktlint-disable no-wildcard-imports
+import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.*
 

@@ -15,5 +15,9 @@
 - Setup Rate Limiting for auth brute force
 - Setup Data curt main argument extraction with official ruling ids plus quoting
 - First HTMX draft
+  - First page with minimal info
+  - Add first useful info
+  - Add Tailwind or Bootstrap 
+  - Create kotlin full stack template repo?
 - Setup pipeline for curt ruling processing
 - If bored: checkout if the authenticate extension function of Route could be moved into an annotation.

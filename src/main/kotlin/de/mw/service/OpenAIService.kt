@@ -15,28 +15,32 @@ class OpenAIService(apiKey: String) {
     private val logger = KotlinLogging.logger {}
 
     init {
-        val config = OpenAIConfig(
-            token = apiKey,
-            timeout = Timeout(socket = 60.seconds),
-        )
+        val config =
+            OpenAIConfig(
+                token = apiKey,
+                timeout = Timeout(socket = 60.seconds),
+            )
         openAI = OpenAI(config)
     }
+
     suspend fun generateText(prompt: String): String? {
         logger.info { "Triggering OpenAI chat completion with promt: $prompt " }
-        val chatCompletionRequest = ChatCompletionRequest(
-            model = ModelId("gpt-4-1106-preview"),
-            temperature = 0.3,
-            messages = listOf(
-                ChatMessage(
-                    role = ChatRole.System,
-                    content = PROMPT_INITIAL_ANALYSIS,
-                ),
-                ChatMessage(
-                    role = ChatRole.User,
-                    content = prompt,
-                ),
-            ),
-        )
+        val chatCompletionRequest =
+            ChatCompletionRequest(
+                model = ModelId("gpt-4-1106-preview"),
+                temperature = 0.3,
+                messages =
+                    listOf(
+                        ChatMessage(
+                            role = ChatRole.System,
+                            content = PROMPT_INITIAL_ANALYSIS,
+                        ),
+                        ChatMessage(
+                            role = ChatRole.User,
+                            content = prompt,
+                        ),
+                    ),
+            )
         val completion = openAI.chatCompletion(chatCompletionRequest)
         return completion.choices.first().message.content
     }
