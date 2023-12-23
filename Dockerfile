@@ -23,7 +23,7 @@ COPY . .
 RUN apk --no-cache add py-pip
 
 # Get environmentvariables & build
-RUN pip install aenv
+RUN pip install git+https://github.com/MartinWie/AEnv.git
 RUN aenv -c -r eu-west-1 -e "$ENVIRONMENT" -s ClaimControl "./gradlew build --info"
 
 
@@ -37,7 +37,7 @@ WORKDIR /app
 RUN apk --no-cache add py-pip
 
 # Install aenv
-RUN pip install aenv
+RUN pip install git+https://github.com/MartinWie/AEnv.git
 
 # Copy only the built jar file from the build stage
 COPY --from=build /build/build/libs/de.mw.claimcontrol-all.jar /app/app.jar
