@@ -22,6 +22,9 @@ COPY . .
 # Install pip
 RUN apk --no-cache add py-pip
 
+# Install git
+RUN apk --no-cache add git
+
 # Get environmentvariables & build
 RUN pip install git+https://github.com/MartinWie/AEnv.git
 RUN aenv -c -r eu-west-1 -e "$ENVIRONMENT" -s ClaimControl "./gradlew build --info"
@@ -35,6 +38,9 @@ WORKDIR /app
 
 # Install pip
 RUN apk --no-cache add py-pip
+
+# Install git
+RUN apk --no-cache add git
 
 # Install aenv
 RUN pip install git+https://github.com/MartinWie/AEnv.git
