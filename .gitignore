@@ -34,3 +34,7 @@ build/*
 
 # Exclude gradle-wrapper.jar from being ignored
 !gradle/wrapper/gradle-wrapper.jar
+
+# Mac
+.DS_Store
+**/.DS_Store
